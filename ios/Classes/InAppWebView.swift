@@ -39,7 +39,7 @@ func JSONStringify(value: Any, prettyPrinted: Bool = false) -> String {
     return ""
 }
 
-let JAVASCRIPT_BRIDGE_NAME = "flutter_inappwebview"
+let JAVASCRIPT_BRIDGE_NAME = "flutter_inappbrowser"
 
 // https://github.com/tildeio/rsvp.js
 let promisePolyfillJS = """
