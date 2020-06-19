@@ -18,7 +18,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class JavaScriptBridgeInterface {
   private static final String LOG_TAG = "JSBridgeInterface";
-  public static final String name = "flutter_inappwebview";
+  public static final String name = "flutter_inappbrowser";//"flutter_inappwebview";
   private FlutterWebView flutterWebView;
   private InAppBrowserActivity inAppBrowserActivity;
   public MethodChannel channel;
