@@ -715,13 +715,12 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
     ArrayList<Parcelable> extraIntents = new ArrayList<>();
     if (!needsCameraPermission()) {
-      extraIntents.add(getPhotoIntent());
-//       if (acceptsImages(acceptTypes)) {
-//         extraIntents.add(getPhotoIntent());
-//       }
-//       if (acceptsVideo(acceptTypes)) {
-//         extraIntents.add(getVideoIntent());
-//       }
+      if (ture || acceptsImages(acceptTypes)) {
+        extraIntents.add(getPhotoIntent());
+      }
+      if (acceptsVideo(acceptTypes)) {
+        extraIntents.add(getVideoIntent());
+      }
     }
 
     Intent fileSelectionIntent = getFileChooserIntent(acceptTypes, allowMultiple);
