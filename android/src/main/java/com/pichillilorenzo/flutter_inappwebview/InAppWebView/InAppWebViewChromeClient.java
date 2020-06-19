@@ -693,12 +693,13 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     Intent chooserIntent = Intent.createChooser(fileChooserIntent, "");
 
     ArrayList<Parcelable> extraIntents = new ArrayList<>();
-    if (acceptsImages(acceptType)) {
       extraIntents.add(getPhotoIntent());
-    }
-    if (acceptsVideo(acceptType)) {
-      extraIntents.add(getVideoIntent());
-    }
+//     if (acceptsImages(acceptType)) {
+//       extraIntents.add(getPhotoIntent());
+//     }
+//     if (acceptsVideo(acceptType)) {
+//       extraIntents.add(getVideoIntent());
+//     }
     chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, extraIntents.toArray(new Parcelable[]{}));
 
     Activity activity = inAppBrowserActivity != null ? inAppBrowserActivity : Shared.activity;
@@ -715,12 +716,13 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
     ArrayList<Parcelable> extraIntents = new ArrayList<>();
     if (!needsCameraPermission()) {
-      if (acceptsImages(acceptTypes)) {
-        extraIntents.add(getPhotoIntent());
-      }
-      if (acceptsVideo(acceptTypes)) {
-        extraIntents.add(getVideoIntent());
-      }
+      extraIntents.add(getPhotoIntent());
+//       if (acceptsImages(acceptTypes)) {
+//         extraIntents.add(getPhotoIntent());
+//       }
+//       if (acceptsVideo(acceptTypes)) {
+//         extraIntents.add(getVideoIntent());
+//       }
     }
 
     Intent fileSelectionIntent = getFileChooserIntent(acceptTypes, allowMultiple);
