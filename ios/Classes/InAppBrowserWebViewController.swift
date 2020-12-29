@@ -794,9 +794,9 @@ public class InAppBrowserWebViewController: UIViewController, FlutterPlugin, UIS
         channel!.invokeMethod("onExit", arguments: [])
     }
     
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-    if (self.presentedViewController != nil) {
-        super.dismissViewControllerAnimated(flag, completion: completion)
+    public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        if (self.presentedViewController != nil) {
+            super.dismissViewControllerAnimated(flag, completion: completion)
+        }
     }
-}
 }
